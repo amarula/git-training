@@ -1,0 +1,161 @@
+:root {
+  /* default theme color */
+  /* can be overrided by uses `themeConfig` option */
+  --slidev-theme-primary: #5d8392;
+  --slidev-code-font-size: 10px;
+  --slidev-code-line-height: 14px;
+}
+
+html.dark {
+  .slidev-layout {
+    color: #cdcdcd;
+    background: #1e1e1e;
+  }
+}
+
+.left-image {
+  vertical-align: middle;
+  width: 450px;
+  position: absolute;
+  left: 32px;
+  top: auto;
+  bottom: auto;
+  transform: translateY(50%);
+  border-image: linear-gradient(#fdcb0b, #fdcb0b) 30;
+  border-width: 4px;
+  border-style: solid;
+}
+
+.logo-topright {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 100px;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.font-small {
+  font-size: 14px;
+}
+
+.font-large {
+  font-size: 18px;
+}
+
+.content-image-right {
+  vertical-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 50%;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 50%;
+  padding: 32px;
+}
+
+ul,li {
+  list-style-type: disc;
+}
+
+.slidev-layout.cover {
+  text-align: end;
+}
+
+.logo {
+  width: 350px;
+  float: left;
+}
+
+.cover {
+  h1 {
+    font-weight: bolder;
+    color: #fdcb0b;
+    font-size: 42px;
+  }
+}
+
+.bottompanel {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 24px;
+  width: 100%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 16px;
+  padding-left: 16px;
+  font-size: 12px;
+  color: black;
+  background-color: #fdcb0b;
+  th {
+    font-weight: 400;
+  }
+}
+
+.slidev-layout.section {
+  background-color: #1e1e1e;
+  text-align: end;
+  align-items: center;
+
+  h1 {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    right: 0%;
+    padding: 32px;
+    font-weight: bolder;
+    text-align: end;
+    color: #fdcb0b;
+    font-size: 42px;
+    transform: translateY(-50%);
+  }
+
+  img {
+    vertical-align: middle;
+    width: 450px;
+    position: absolute;
+    left: 32px;
+    top: auto;
+    bottom: auto;
+    transform: translateY(50%);
+    border-image: linear-gradient(#fdcb0b, #fdcb0b) 30;
+    border-width: 4px;
+    border-style: solid;
+  }
+}
+
+.slidev-layout.cover,
+.slidev-layout.intro {
+  @apply h-full grid;
+
+  h1 {
+    @apply text-6xl;
+  }
+
+  h2 {
+    @apply text-2xl font-bold;
+  }
+
+  h3 {
+    @apply text-base font-light;
+  }
+
+  h1 + p {
+    @apply -mt-2 opacity-50 mb-4;
+  }
+
+  p + h2,
+  ul + h2,
+  table + h2 {
+    @apply mt-10;
+  }
+}
