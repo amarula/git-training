@@ -789,9 +789,12 @@ layout: default
 
 <div class="center">
 
--   **Gitflow:** More complex, for release management.    
--   **GitHub Flow:** Simpler, for continuous deployment.
--   Consider your project's needs.
+| GitHub Flow                                  | Git Flow                                      |
+|----------------------------------------------|-----------------------------------------------|
+| **Focus:** Continuous delivery, smaller teams. | **Focus:** Release cycles, larger teams.        |
+| **Branches:** `main`, feature branches.       | **Branches:** `main`, `develop`, feature, etc. |
+| **Workflow:** Feature PRs -> `main` -> deploy. | Feature -> `develop` -> release -> `main`.     |
+| **Best for:** Frequent, agile deployments.   | **Best for:** Scheduled, structured releases. |
 
 </div>
 
@@ -803,7 +806,11 @@ layout: default
 
 <div class="center">
 
--   Use `git fetch` and `git merge` or `git pull` to keep your local `main` branch synchronized with the remote.
+- **Keep main synchronized:** Use git fetch origin main to download remote changes.
+- **Merge or Pull:** Integrate changes with git merge origin main (creates a merge commit) or the combined git pull origin main.
+- **Alternative: Rebase:** For a linear history, use git fetch origin main then git rebase origin main on your local main.
+
+Better to have linear history to allow to keep track of changes in easy way
 
 </div>
 
@@ -866,6 +873,17 @@ git remote -v
 ```
 -   Shows remote names and URLs (fetch and push).
 
+```bash
+panicking@panicking:~/work/bsh/symana/linux$ git remote -v
+mainline	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git (fetch)
+mainline	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git (push)
+origin	https://scr.bsh-sdd.com/scm/symana/naos_kernel.git (fetch)
+origin	https://scr.bsh-sdd.com/scm/symana/naos_kernel.git (push)
+texas	git://git.ti.com/ti-linux-kernel/ti-linux-kernel.git (fetch)
+texas	git://git.ti.com/ti-linux-kernel/ti-linux-kernel.git (push)
+panicking@panicking:~/work/bsh/symana/linux$ 
+```
+
 </div>
 
 
@@ -886,7 +904,7 @@ git push <remote_name> <branch_name>
 -   Sends local commits to the remote.
     
 -   Example: `git push origin main`
-    
+
 </div>
 
 ---
@@ -1260,23 +1278,27 @@ layout: default
 
 <div class="center">
 
--   Dry run:
+- Dry run:
     
     ```
     git clean -n
     
     ```    
--   Force removal:
+- Force removal:
     
     ```
     git clean -f
     
     ```
--   Remove directories:
+- Remove directories:
     
     ```
     git clean -fd
     
+    ```
+- Remove even untracked files:
+    ```
+    git clean -fdx
     ```
 
 </div>
@@ -1309,9 +1331,13 @@ layout: default
 
 <div class="center">
 
--   Understand the commands.    
--   Be careful with `--hard`.
+**git reset** can be used to restore the git to a different point.
+
+-   git reset allow you to move to a specific \<sha256\> or tag
+-   Be careful with `--hard`. Hard force the tree to go to that specific commit
 -   Prefer `git revert` for public commits.
+
+Public or official repositories should never receive a reset hard that destroy the history.
 
 </div>
 
@@ -1337,8 +1363,15 @@ layout: default
 
 <div class="center">
 
--   Temporarily save uncommitted changes.    
--   Commands: `git stash`, `git stash list`, `git stash apply`, `git stash drop`.
+- **Temporarily save uncommitted changes:** Stashing takes a snapshot of your modified and staged files, allowing you to switch branches or perform other Git operations without committing incomplete work. It cleans your working directory.
+
+- **git stash:** Saves your current uncommitted changes to a stack for later use. Optionally add a message with git stash save "message".
+
+- **stash list:** Displays a list of all your saved stashes, showing their index and any associated messages, helping you track your temporary saves.
+
+- **git stash apply:** Reapplies a specific stash (defaulting to the latest) to your working directory and staging area. The stash remains in the list.
+
+- **git stash drop:** Permanently removes a specific stash from the stash list. Use with caution as this action is generally irreversible.
 
 </div>
 
@@ -1351,10 +1384,13 @@ layout: default
 
 <div class="center">
 
--   Mark specific points in history (e.g., v1.0.0).
--   Commands:
-    -   `git tag -a <tag_name> -m "Release notes"`
-    -   `git tag`
+Mark specific points in history (e.g., v1.0.0): Tags create persistent snapshots, like version markers, making it easy to reference important releases or milestones in your project's history.
+
+Commands:
+
+- **git tag -a <tag_name> -m "Release notes":** Creates an annotated tag with a message, storing author and date. Essential for releases.
+- **git tag <tag_name>:** Create a standard tag that does not include any new commit.
+- **git tag:** Lists all existing tags in your repository.
 
 </div>
 
