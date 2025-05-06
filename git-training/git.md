@@ -479,6 +479,8 @@ Version control allows you to track changes, seeing who, what, and when for acco
 layout: default
 ---
 
+<div class="center">
+
 # What are Branches?
 
 -   Independent lines of development.
@@ -487,6 +489,8 @@ layout: default
 
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/advance-master.svg"
 style="margin:0 auto; background-color:white; padding:5px; border-radius:10px; width:500px"/>
+
+</div>
 
 ---
 layout: default
@@ -832,9 +836,15 @@ layout: default
 
 # What are Remote Repositories?
 
-- Centralized repositories hosted on platforms like GitHub, GitLab, or Bitbucket.
-- Enable collaboration and backups.
+<div class="center">
 
+- Are versions of your project hosted on a server (e.g., GitHub, GitLab).
+- Enable collaboration by allowing multiple developers to share code.
+- Act as a central point for pushing local changes and pulling updates.
+- Provide a backup of the project's codebase.
+- Are referenced by a name (usually origin) and a URL.
+
+</div>
 ---
 layout: two-cols
 ---
@@ -905,15 +915,7 @@ git push <remote_name> <branch_name>
 
 -   Example: `git push origin main`
 
-</div>
-
----
-layout: default
----
-
-# First Push and Tracking
-
-<div class="center">
+First Push and Tracking
 
 ```
 git push -u origin main
