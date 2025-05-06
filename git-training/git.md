@@ -16,7 +16,7 @@ layout: default
 
 # Part 1: Introduction to Version Control
 
-<div class="center">
+<div class="center" styles="width:80%">
 
 A Version Control System (VCS) is a software tool that meticulously tracks changes to files over time. It's like having a detailed history book for your project.  Think of it as a system that not only saves different versions of your files but also records who made each change and when. This allows you to revert to previous versions if needed, compare modifications side-by-side, and collaborate effectively with others on the same project without overwriting each other's work.
 
@@ -166,7 +166,7 @@ layout: default
 
 # Part 2: Getting Started with Git
 
-<div class="center">
+<div class="center" styles="width:80%">
 
 VCS keeps a record of every modification, like snapshots in time.
 It's a \"time machine\" for your code, allowing you to revert to any previous
@@ -469,7 +469,7 @@ layout: default
 
 # Part 3: Working with Branches
 
-<div class="center">
+<div class="center" styles="width:80%">
 
 Version control allows you to track changes, seeing who, what, and when for accountability and debugging. It enables collaboration, facilitating teamwork and avoiding overwrites, with VCS merging changes. You can safely explore new features, discarding branches if needed. Rollback to stable versions after errors, and develop features in parallel, integrating changes cleanly through branching and merging.
 
@@ -651,7 +651,7 @@ layout: default
 <div class="center">
 
 -   Use `git log` while on different branches to see their respective commit histories.
--   `git log main..feature-x` to see commits unique to feature-x
+-   `git log main...feature-x` to see commits unique to feature-x
 
 </div>
 
@@ -820,7 +820,7 @@ layout: default
 
 # Part 4: Working with Remote Repositories
 
-<div class="center">
+<div class="center" styles="width:80%">
 
 A complete log of changes provides a detailed history of every modification. You can understand project evolution by seeing how the project has grown. Version control offers accountability and traceability, tracking who made each change.
 
@@ -936,11 +936,13 @@ git fetch <remote_name>
 
 ```
 
--   Downloads commits and branches from the remote.
--   Does _not_ merge changes.
+- Downloads commits and branches from the remote.
+- Does _not_ merge changes.
 - Example:
   ```
   git fetch origin
+
+  git remote update (keep all the remote update without apply)
   ```
 
 ::right::
@@ -1002,11 +1004,11 @@ layout: default
 
 <div class="center">
 
-1.  `git clone` the repository.
-2.  `git checkout -b <branch>` for your changes.
-3.  Make and `git commit` changes.
-4.  `git push origin <branch>`
-5.  Create a Pull Request (on GitHub/GitLab/Bitbucket).
+1. `git clone` the repository.
+2. `git checkout -b <branch>` for your changes.
+3. Make and `git commit` changes.
+4. `git push origin <branch>`
+5. Create a Pull Request (on GitHub/GitLab/Bitbucket).
 
 </div>
 
@@ -1035,7 +1037,27 @@ layout: default
 
 <div class="center">
 
--   Use `git pull` regularly to get the latest changes from the remote.
+- Use `git pull` regularly to get the latest changes from the remote.
+
+```bash
+git pull origin kirkstone
+From https://bitbucket.org/bticinogit/coin
+ * branch            kirkstone  -> FETCH_HEAD
+Updating c438e1a..fbf5244
+Fast-forward
+ kas/coin-base.yml                                                                     |   6 +-
+ ...d-weston-dpms-client.patch => 0001-weston-Implement-dpms-support-interfaces.patch} | 346 ++++++++++++++++++++++++++++++++++++------
+ .../wayland/weston/0002-clients-Add-weston-dpms-client-kiosk-shell.patch              |  89 -----------
+ .../wayland/weston/0002-desktop-shell-Whitelist-only-one-application-name-fo.patch    |  62 ++++++++
+ meta-coin/recipes-graphics/wayland/weston/0003-dpms-add-output-selection.patch        | 261 -------------------------------
+ .../wayland/weston/0004-dpms-Confirm-disable-mode-in-dpms-only-if-all-the-ou.patch    |  80 ----------
+ meta-coin/recipes-graphics/wayland/weston/0005-dpms-off-fix.patch                     |  20 ---
+ meta-coin/recipes-graphics/wayland/weston/0006-dpms-remove-annoying-print.patch       |  12 --
+ .../wayland/weston/0007-kiosk-shell-Force-remapping-of-wayland-gui-app-id.patch       | 100 ------------
+ meta-coin/recipes-graphics/wayland/weston/0007-kiosk-shell-force-keyboard-input.patch |  65 --------
+ meta-coin/recipes-graphics/wayland/weston_%.bbappend                                  |   9 +-
+ 11 files changed, 365 insertions(+), 685 deletions(-)
+```
 
 </div>
 
@@ -1047,26 +1069,42 @@ layout: default
 
 <div class="center">
 
--   Similar to merge conflicts.
--   Resolve manually, `git add`, `git commit`.
+- Similar to merge conflicts.
+- Resolve manually, `git add`, `git commit`.
+
+Example:
+
+```
+git pull origin main
+From https://github.com/yourusername/yourrepository
+ * branch            main     -> FETCH_HEAD
+Auto-merging my_file.txt
+CONFLICT (content): Merge conflict in my_file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
 
 </div>
 
 ---
-layout: default
+layout: two-cols
 ---
 
-
 # Rebasing (Introduction)
-
-<div class="center">
 
 -   Alternative to merging.
 -   Moves a branch's base to another branch.
 -   Command: `git rebase <branch_to_rebase_onto>`
 -   Caution: Avoid rebasing public history!
 
-</div>
+::right::
+
+<img src="https://git-scm.com/book/en/v2/images/basic-rebase-1.png"
+     style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
+
+<Arrow x1="710" y1="240" x2="710" y2="330" width="3" color="gray"/>
+
+<img src="https://git-scm.com/book/en/v2/images/basic-rebase-3.png"
+     style="margin:0 auto; background-color:white; padding-top: 100px; border-width:3px; border-radius:10px; width:300px"/>
 
 ---
 layout: default
@@ -1077,7 +1115,13 @@ layout: default
 
 <div class="center">
 
--   `git log <remote>/<branch>..<local_branch>`
+-   `git log <remote>/<branch>...<local_branch>`
+
+```bash
+git log origin/kirkstone...kirkstone  --oneline
+fbf5244 (origin/kirkstone, origin/feature/allow-to-configure-build-core, origin/HEAD) kas: Add the possibility to change core/threads bitbake number
+cf18243 (origin/fix/weston-allow-background-input-media) weston: Update weston to support desktop shell and bt-av-media
+```
 
 </div>
 
@@ -1090,8 +1134,24 @@ layout: default
 
 <div class="center">
 
+Few ways:
+
 ```
 git push <remote_name> --delete <branch_name>
+
+```
+or
+
+```
+git push <remote_name> :<branch_name>
+```
+
+Example:
+
+```
+~/work/bticino/test-easykit/coin$ git push origin --delete fix/update-srcrev
+To https://bitbucket.org/bticinogit/coin
+ - [deleted]         fix/update-srcrev
 
 ```
 
@@ -1108,7 +1168,21 @@ layout: default
 <div class="center">
 
 -   Authentication errors (SSH keys, passwords).
--   "Already up to date" despite remote changes (check your local branch).
+
+```
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+- "Already up to date" despite remote changes (check your local branch).
+
+```
+git push origin main
+Everything up-to-date
+```
 
 </div>
 
@@ -1120,7 +1194,7 @@ layout: default
 
 # Part 5: Undoing Changes
 
-<div class="center">
+<div class="center" style="width:80%">
 
 VCS allows multiple developers to work on the same project simultaneously. It manages contributions efficiently, ensuring smooth integration, and provides tools to resolve conflicts systematically.
 
@@ -1135,8 +1209,10 @@ layout: default
 
 <div class="center">
 
--   Git provides tools to undo mistakes at different stages.
--   Understand the commands and their consequences.
+- **Stages of Undoing:** You can undo changes at different points in your Git workflow: before you've prepared them for a commit, after you've marked them to be included in a commit, or even after you've recorded a commit.
+- **Concept:** Git allows you to revert modifications, providing flexibility to correct mistakes or change your mind.
+- **What:** You can discard uncommitted edits, remove files from the set of changes to be committed, or undo the effects of a previous commit.
+- **Why:** This helps maintain a clean project history and enables experimentation without fear of permanent errors.
 
 </div>
 
@@ -1163,18 +1239,6 @@ layout: default
 
     ```
 
-</div>
-
-
----
-layout: default
----
-
-
-# Unstaging Changes
-
-<div class="center">
-
 -   Remove a file from the staging area:
 
     ```
@@ -1188,6 +1252,27 @@ layout: default
 layout: default
 ---
 
+# Unstaging Changes
+
+<div class="center">
+
+- **Command:** git reset \<file\>
+    - Use \<file\> to unstage specific files.
+    - Changes in the working directory are preserved.
+
+- Example:
+
+```bash
+git add file1.txt file2.txt
+git reset file1.txt  # Unstage file1.txt
+git status # file1.txt is no longer staged
+```
+
+</div>
+
+---
+layout: default
+---
 
 # Undoing the Last Commit (Local)
 
@@ -1219,16 +1304,32 @@ layout: default
 layout: default
 ---
 
-
 # Understanding HEAD
 
-<div class="center">
+- `HEAD`: Pointer to the current commit.
+- `HEAD^`: Parent of the current commit.
+- `HEAD~n`: Nth ancestor commit.
 
--   `HEAD`: Pointer to the current commit.
--   `HEAD^`: Parent of the current commit.
--   `HEAD~n`: Nth ancestor commit.
+```bash
 
-</div>
+commit 707b7d3bc9f00ad932af8a7b25847ac167f8b1c7 <----------HEAD
+Author: Michael Trimarchi <michael@amarulasolutions.com>
+Date:   Tue May 6 19:42:13 2025 +0200
+
+    git.md: Remove spaces in the end of each line
+
+    Signed-off-by: Michael Trimarchi <michael@amarulasolutions.com>
+
+commit ae1f8b4a85aec7d81c22c122afaad367f0434e71 <-----------HEAD^
+Author: Michael Trimarchi <michael@amarulasolutions.com>
+Date:   Tue May 6 19:41:18 2025 +0200
+
+    git: Expand a bit some of the slides
+
+    Make slides with a bit of more context and examples
+
+    Signed-off-by: Michael Trimarchi <michael@amarulasolutions.com>
+```
 
 ---
 layout: default
@@ -1246,8 +1347,10 @@ git reset --hard <commit_hash>
 -   Moves the branch pointer to the specified commit and discards subsequent changes.
 -   Use with EXTREME CAUTION! Data loss is possible.
 
-</div>
+<img src="https://www.git-tower.com/learn/media/pages/git/faq/undo-last-commit/15afbcad2b-1746465605/02-reset-concept.png"
+     style="background-color:white; padding:10px; border-radius:10px; width:600px"/>
 
+</div>
 
 ---
 layout: default
@@ -1348,7 +1451,7 @@ layout: default
 
 # Part 6: Advanced Topics (Briefly)
 
-<div class="center">
+<div class="center" style="width:80%">
 
 New features or bug fixes can be developed in separate branches, enabling safe experimentation without affecting the main codebase. If things go wrong, you can quickly undo changes and revert easily.
 
