@@ -16,7 +16,7 @@ layout: default
 
 # Part 1: Introduction to Version Control
 
-<div class="center" styles="width:80%">
+<div class="center" style="width:80%">
 
 A Version Control System (VCS) is a software tool that meticulously tracks changes to files over time. It's like having a detailed history book for your project.  Think of it as a system that not only saves different versions of your files but also records who made each change and when. This allows you to revert to previous versions if needed, compare modifications side-by-side, and collaborate effectively with others on the same project without overwriting each other's work.
 
@@ -166,7 +166,7 @@ layout: default
 
 # Part 2: Getting Started with Git
 
-<div class="center" styles="width:80%">
+<div class="center" style="width:80%">
 
 VCS keeps a record of every modification, like snapshots in time.
 It's a \"time machine\" for your code, allowing you to revert to any previous
@@ -469,7 +469,7 @@ layout: default
 
 # Part 3: Working with Branches
 
-<div class="center" styles="width:80%">
+<div class="center" style="width:80%">
 
 Version control allows you to track changes, seeing who, what, and when for accountability and debugging. It enables collaboration, facilitating teamwork and avoiding overwrites, with VCS merging changes. You can safely explore new features, discarding branches if needed. Rollback to stable versions after errors, and develop features in parallel, integrating changes cleanly through branching and merging.
 
@@ -820,7 +820,7 @@ layout: default
 
 # Part 4: Working with Remote Repositories
 
-<div class="center" styles="width:80%">
+<div class="center" style="width:80%">
 
 A complete log of changes provides a detailed history of every modification. You can understand project evolution by seeing how the project has grown. Version control offers accountability and traceability, tracking who made each change.
 
