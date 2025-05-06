@@ -201,9 +201,9 @@ git --version
 
 ```
 
--   Verifies Git is installed correctly.    
+-   Verifies Git is installed correctly.
 -   Displays the installed Git version.
-    
+
 
 </div>
 
@@ -216,19 +216,19 @@ layout: default
 <div class="center">
 
 -   Set username:
-    
+
     ```
     git config --global user.name "Your Name"
-    
+
     ```
-    
+
 -   Set email:
-    
+
     ```
     git config --global user.email "your.email@example.com"
-    
+
     ```
-    
+
 -   `--global`: Applies to all repositories.
 
 Those changes are applied to your .gitconfig file in home directory
@@ -249,10 +249,10 @@ git config --list
 ```
 
 -   Displays all Git configuration settings.
-    
+
 -   Use `git config --local <key>` for repository-specific settings.
 
-</div>    
+</div>
 
 ---
 layout: default
@@ -265,24 +265,24 @@ layout: default
 git init creates a new, empty Git repository in the current directory.
 
 -   Repository (.git): Hidden directory containing project history.
-    
+
 -   Command:
-    
+
     ```
     git init
-    
+
     ```
-    
+
 -   Example:
-    
+
     ```
     mkdir my-project
     cd my-project
     git init
-    
+
     ```
 
-</div>    
+</div>
 
 ---
 layout: default
@@ -290,7 +290,7 @@ layout: default
 
 # Working Directory, Staging Area, Repository
 
--   **Working Directory:** Your project's files.    
+-   **Working Directory:** Your project's files.
 -   **Staging Area (Index):** Where you prepare changes for commit.
 -   **Repository (.git):** Stores the commit history.
 
@@ -306,21 +306,21 @@ layout: default
 <div class="center">
 
 -   Add a single file:
-    
+
     ```
     git add <filename>
-    
+
     ```
-    
+
     Example: `git add index.html`
-    
+
 -   Add multiple files:
-    
+
     ```
     git add .
-    
+
     ```
-    
+
     (Adds all untracked files in the current directory and subdirectories)
 
 </div>
@@ -338,7 +338,7 @@ git status
 
 ```
 
--   Shows file status:    
+-   Shows file status:
     -   Untracked files
     -   Changes not staged
     -   Changes staged
@@ -356,16 +356,16 @@ layout: default
 <div class="center">
 
 -   Commit: A snapshot of changes.
-    
+
 -   Command:
-    
+
     ```
     git commit -m "Your commit message"
-    
+
     ```
-    
+
 -   `-m`: Specifies the commit message.
-    
+
 </div>
 
 ---
@@ -376,14 +376,14 @@ layout: default
 
 <div class="center">
 
--   Clear and concise.    
+-   Clear and concise.
 -   Describe _why_ the change was made, not _what_ was changed.
 -   Use imperative mood ("Fix bug..." not "Fixed bug...").
 -   Example: `feat: Implement user authentication`
 
 
 </div>
-    
+
 ---
 layout: default
 ---
@@ -393,12 +393,12 @@ layout: default
 <div class="center">
 
 -   Basic log:
-    
+
     ```
     git log
-    
+
     ```
-    
+
 -   Shows: Commit hash, author, date, message.
 
 </div>
@@ -413,17 +413,17 @@ layout: default
 <div class="center">
 
 -   One-line log:
-    
+
     ```
     git log --oneline
-    
+
     ```
-    
+
 -   Graphical log:
-    
+
     ```
     git log --graph --oneline --decorate --all
-    
+
     ```
 
 </div>
@@ -437,14 +437,14 @@ layout: default
 <div class="center">
 
 -   `.gitignore` file: Specifies intentionally untracked files to ignore.
-    
+
 -   Example:
-    
+
     ```
     node_modules/
     .env
     *.log
-    
+
     ```
 
 </div>
@@ -462,7 +462,7 @@ layout: default
 - Commit the `.gitignore` file itself.
 
 </div>
-    
+
 ---
 layout: default
 ---
@@ -481,7 +481,7 @@ layout: default
 
 # What are Branches?
 
--   Independent lines of development.   
+-   Independent lines of development.
 -   Isolate features, bug fixes, experiments.
 -   Lightweight and fast to create.
 
@@ -499,7 +499,7 @@ layout: default
 -   Isolate features and bug fixes.
 -   Prevent unstable code from affecting the main branch.
 -   Enable parallel development.
-    
+
 </div>
 
 ---
@@ -515,11 +515,11 @@ git branch
 
 ```
 
--   Shows local branches.    
+-   Shows local branches.
 -   The current branch is marked with an asterisk (*).
 
 </div>
-    
+
 ---
 layout: two-cols
 ---
@@ -532,12 +532,12 @@ git branch <branch_name>
 ```
 
 -   Example:
-    
+
     ```
     git branch testing
-    
+
     ```
-    
+
 -   Creates a new branch named "testing".
 
 ::right::
@@ -562,12 +562,12 @@ git checkout <branch_name>
 ```
 
 -   Example:
-    
+
     ```
     git checkout testing
-    
+
     ```
-    
+
 -   Switches the working directory to the "testing" branch.
 
 ::right::
@@ -592,12 +592,12 @@ git checkout -b <branch_name>
 ```
 
 -   Shorthand for creating and switching.
-    
+
 -   Example:
-    
+
     ```
     git checkout -b testing
-    
+
     ```
 
 ::right::
@@ -690,12 +690,12 @@ layout: default
 
 <div class="center">
 
--   Occur when changes in different branches conflict.    
+-   Occur when changes in different branches conflict.
 -   Git cannot automatically resolve them.
 -   Require manual resolution.
 
 </div>
-    
+
 ---
 layout: default
 ---
@@ -720,13 +720,13 @@ layout: default
 
 <div class="center">
 
-1.  Open the conflicted file in an editor.    
+1.  Open the conflicted file in an editor.
 2.  Manually choose which changes to keep.
 3.  Remove the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
 4.  Save the file.
 
 </div>
-    
+
 ---
 layout: default
 ---
@@ -736,21 +736,21 @@ layout: default
 <div class="center">
 
 1.  Stage the resolved file:
-    
+
     ```
     git add <conflicted_file>
-    
-    ```    
+
+    ```
 2.  Commit the merge:
-    
+
     ```
     git commit -m "Merge branch 'feature-x'"
-    
+
     ```
     (Git usually pre-populates the message)
 
 </div>
-    
+
 ---
 layout: two-cols
 ---
@@ -832,7 +832,7 @@ layout: default
 
 # What are Remote Repositories?
 
-- Centralized repositories hosted on platforms like GitHub, GitLab, or Bitbucket.    
+- Centralized repositories hosted on platforms like GitHub, GitLab, or Bitbucket.
 - Enable collaboration and backups.
 
 ---
@@ -881,7 +881,7 @@ origin	https://scr.bsh-sdd.com/scm/symana/naos_kernel.git (fetch)
 origin	https://scr.bsh-sdd.com/scm/symana/naos_kernel.git (push)
 texas	git://git.ti.com/ti-linux-kernel/ti-linux-kernel.git (fetch)
 texas	git://git.ti.com/ti-linux-kernel/ti-linux-kernel.git (push)
-panicking@panicking:~/work/bsh/symana/linux$ 
+panicking@panicking:~/work/bsh/symana/linux$
 ```
 
 </div>
@@ -902,7 +902,7 @@ git push <remote_name> <branch_name>
 ```
 
 -   Sends local commits to the remote.
-    
+
 -   Example: `git push origin main`
 
 </div>
@@ -936,7 +936,7 @@ git fetch <remote_name>
 
 ```
 
--   Downloads commits and branches from the remote.    
+-   Downloads commits and branches from the remote.
 -   Does _not_ merge changes.
 - Example:
   ```
@@ -964,9 +964,9 @@ git pull <remote_name> <branch_name>
 ```
 
 -   Fetches and merges changes from the remote.
-    
+
 -   Shorthand (if tracking is set up): `git pull`
-    
+
 </div>
 
 
@@ -982,7 +982,7 @@ git clone <remote_url>
 
 ```
 
-- Creates a local copy of a remote repository.    
+- Creates a local copy of a remote repository.
 - Example:
   ```
   git clone https://github.com/user/repo.git
@@ -1002,14 +1002,14 @@ layout: default
 
 <div class="center">
 
-1.  `git clone` the repository.    
+1.  `git clone` the repository.
 2.  `git checkout -b <branch>` for your changes.
 3.  Make and `git commit` changes.
 4.  `git push origin <branch>`
 5.  Create a Pull Request (on GitHub/GitLab/Bitbucket).
 
 </div>
-    
+
 
 ---
 layout: default
@@ -1023,7 +1023,7 @@ layout: default
 -   Mechanism for proposing changes.
 -   Facilitates code review and discussion.
 -   Essential for collaborative development.
-    
+
 </div>
 
 ---
@@ -1036,7 +1036,7 @@ layout: default
 <div class="center">
 
 -   Use `git pull` regularly to get the latest changes from the remote.
-    
+
 </div>
 
 ---
@@ -1047,10 +1047,10 @@ layout: default
 
 <div class="center">
 
--   Similar to merge conflicts.    
+-   Similar to merge conflicts.
 -   Resolve manually, `git add`, `git commit`.
 
-</div>    
+</div>
 
 ---
 layout: default
@@ -1066,7 +1066,7 @@ layout: default
 -   Command: `git rebase <branch_to_rebase_onto>`
 -   Caution: Avoid rebasing public history!
 
-</div>    
+</div>
 
 ---
 layout: default
@@ -1107,11 +1107,11 @@ layout: default
 
 <div class="center">
 
--   Authentication errors (SSH keys, passwords).    
+-   Authentication errors (SSH keys, passwords).
 -   "Already up to date" despite remote changes (check your local branch).
 
 </div>
-    
+
 
 ---
 layout: default
@@ -1135,11 +1135,11 @@ layout: default
 
 <div class="center">
 
--   Git provides tools to undo mistakes at different stages.    
+-   Git provides tools to undo mistakes at different stages.
 -   Understand the commands and their consequences.
 
 </div>
-    
+
 
 ---
 layout: default
@@ -1151,20 +1151,20 @@ layout: default
 <div class="center">
 
 -   Discard changes in the working directory:
-    
+
     ```
     git restore <filename>
-    
+
     ```
 -   Discard all unstaged changes
-    
+
     ```
     git restore .
-    
+
     ```
 
 </div>
-    
+
 
 ---
 layout: default
@@ -1176,13 +1176,13 @@ layout: default
 <div class="center">
 
 -   Remove a file from the staging area:
-    
+
     ```
     git restore --staged <filename>
-    
+
     ```
 
-</div>    
+</div>
 
 ---
 layout: default
@@ -1194,22 +1194,22 @@ layout: default
 <div class="center">
 
 -   Keep changes in staging:
-    
+
     ```
     git reset --soft HEAD^
-    
-    ```    
+
+    ```
 -   Keep changes in working directory:
-    
+
     ```
     git reset --mixed HEAD^
-    
+
     ```
 -   Discard changes:
-    
+
     ```
     git reset --hard HEAD^
-    
+
     ```
     (Use with CAUTION!)
 
@@ -1243,7 +1243,7 @@ layout: default
 git reset --hard <commit_hash>
 
 ```
--   Moves the branch pointer to the specified commit and discards subsequent changes. 
+-   Moves the branch pointer to the specified commit and discards subsequent changes.
 -   Use with EXTREME CAUTION! Data loss is possible.
 
 </div>
@@ -1263,7 +1263,7 @@ git revert <commit_hash>
 
 ```
 
--   Creates a _new_ commit that undoes the changes of the specified commit.    
+-   Creates a _new_ commit that undoes the changes of the specified commit.
 -   Safer for shared repositories than `reset --hard`.
 
 </div>
@@ -1279,22 +1279,22 @@ layout: default
 <div class="center">
 
 - Dry run:
-    
+
     ```
     git clean -n
-    
-    ```    
+
+    ```
 - Force removal:
-    
+
     ```
     git clean -f
-    
+
     ```
 - Remove directories:
-    
+
     ```
     git clean -fd
-    
+
     ```
 - Remove even untracked files:
     ```
@@ -1317,7 +1317,7 @@ git reflog
 
 ```
 
--   Shows a history of where `HEAD` has been.    
+-   Shows a history of where `HEAD` has been.
 -   Use `git reset --hard <reflog_entry>` to recover a lost commit.
 
 </div>
@@ -1407,11 +1407,11 @@ layout: default
 git update-index --assume-unchanged <filename>
 
 ```
--   Tells Git to ignore changes to a tracked file.    
+-   Tells Git to ignore changes to a tracked file.
 -   Use with caution.
 
 </div>
-    
+
 
 ---
 layout: default
@@ -1426,10 +1426,10 @@ layout: default
 -   Example:
     ```
     git config --global alias.co checkout
-    
+
     ```
     Now you can use `git co <branch>`
-    
+
 </div>
 
 ---
@@ -1441,7 +1441,7 @@ layout: default
 
 <div class="center">
 
--   Git Documentation: [https://git-scm.com/doc](https://git-scm.com/doc "null")    
+-   Git Documentation: [https://git-scm.com/doc](https://git-scm.com/doc "null")
 -   Online tutorials and courses (e.g., Coursera, Udemy, freeCodeCamp).
 -   Community forums (e.g., Stack Overflow).
 
@@ -1457,7 +1457,7 @@ layout: default
 
 <div class="center">
 
--   Git is essential for version control.    
+-   Git is essential for version control.
 -   Key commands: `init`, `add`, `commit`, `branch`, `checkout`, `merge`, `clone`, `push`, `pull`, `status`, `log`, `restore`, `reset`, `revert`.
 
 </div>
