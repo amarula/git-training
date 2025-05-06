@@ -137,22 +137,25 @@ layout: default
 * Created by Linus Torvalds (2005) for Linux kernel.
 * Focus on speed, data integrity, and distributed workflow.
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg"
+     style="background-color:white; padding:10px; border-radius:10px; width:200px"/>
+
 </div>
 
 ---
 layout: default
 ---
 
-<div class="center">
-
 # Git vs. Other VCS
+
+<div class="center">
 
 | Feature        | Git (Distributed)                               | SVN (Centralized)                             |
 | :------------- | :---------------------------------------------- | :-------------------------------------------- |
 | Model          | Decentralized, local copies                     | Central server, single repository             |
-| Speed          | Fast for most operations                       | Slower for many operations                     |
-| Offline Work   | Full history available, work offline           | Requires network connection                    |
-| Branching      | Lightweight, efficient                        | More complex, less efficient                  |
+| Speed          | Fast for most operations                        | Slower for many operations                    |
+| Offline Work   | Full history available, work offline            | Requires network connection                   |
+| Branching      | Lightweight, efficient                          | More complex, less efficient                  |
 
 </div>
 
@@ -193,7 +196,7 @@ layout: default
 
 <div class="center">
 
-```bash
+```
 git --version
 
 ```
@@ -287,15 +290,12 @@ layout: default
 
 # Working Directory, Staging Area, Repository
 
-<div class="center">
-
 -   **Working Directory:** Your project's files.    
 -   **Staging Area (Index):** Where you prepare changes for commit.
 -   **Repository (.git):** Stores the commit history.
 
-[Image of Working Directory, Staging Area, Repository](https://git-scm.com/book/en/v2/images/areas.png)
-
-</div>
+<img src="https://git-scm.com/book/en/v2/images/areas.png"
+     style="width:480px; margin:0 auto; background-color:white; padding:5px; border-radius:10px" />
 
 ---
 layout: default
@@ -481,23 +481,20 @@ layout: default
 
 # What are Branches?
 
-<div class="center">
-
 -   Independent lines of development.   
 -   Isolate features, bug fixes, experiments.
 -   Lightweight and fast to create.
 
-[Image of Git Branches](https://www.nobledesktop.com/image/gitresources/git-branches-merge.png)
-
-</div>
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/advance-master.svg"
+style="margin:0 auto; background-color:white; padding:5px; border-radius:10px; width:500px"/>
 
 ---
 layout: default
 ---
 
-<div class="center">
-
 # Why Use Branches?
+
+<div class="center">
 
 -   Isolate features and bug fixes.
 -   Prevent unstable code from affecting the main branch.
@@ -524,12 +521,10 @@ git branch
 </div>
     
 ---
-layout: default
+layout: two-cols
 ---
 
 # Creating a New Branch
-
-<div class="center">
 
 ```
 git branch <branch_name>
@@ -539,22 +534,27 @@ git branch <branch_name>
 -   Example:
     
     ```
-    git branch feature-x
+    git branch testing
     
     ```
     
--   Creates a new branch named "feature-x".
+-   Creates a new branch named "testing".
 
-</div>
+::right::
 
-    
+<img src="/images/images_head-to-master-without-testing.svg"
+     style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
+
+<Arrow x1="710" y1="240" x2="710" y2="330" width="3" color="gray"/>
+
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/head-to-master.svg"
+     style="margin:0 auto; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
+
 ---
-layout: default
+layout: two-cols
 ---
 
 # Switching Branches
-
-<div class="center">
 
 ```
 git checkout <branch_name>
@@ -564,21 +564,27 @@ git checkout <branch_name>
 -   Example:
     
     ```
-    git checkout feature-x
+    git checkout testing
     
     ```
     
--   Switches the working directory to the "feature-x" branch.
+-   Switches the working directory to the "testing" branch.
 
-</div>
+::right::
+
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/head-to-master.svg"
+     style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
+
+<Arrow x1="710" y1="240" x2="710" y2="330" width="3" color="gray"/>
+
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/head-to-testing.svg"
+     style="margin:0 auto; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
 
 ---
-layout: default
+layout: two-cols
 ---
 
 # Creating and Switching
-
-<div class="center">
 
 ```
 git checkout -b <branch_name>
@@ -590,11 +596,19 @@ git checkout -b <branch_name>
 -   Example:
     
     ```
-    git checkout -b bugfix-y
+    git checkout -b testing
     
     ```
-    
-</div>
+
+::right::
+
+<img src="/images/images_head-to-master-without-testing.svg"
+     style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
+
+<Arrow x1="710" y1="240" x2="710" y2="330" width="3" color="gray"/>
+
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/head-to-testing.svg"
+     style="margin:0 auto; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
 
 ---
 layout: default
@@ -642,37 +656,32 @@ layout: default
 </div>
 
 ---
-layout: default
+layout: two-cols
 ---
 
 # Merging Branches
 
-<div class="center">
+- Integrate changes from one branch into another.
+- Command (on the target branch):
+  ```
+  git merge <branch_to_merge>
+  ```
+- Example merge (no conflicts):
+  ```
+  git checkout master
+  git merge hotfix
+  ```
 
--   Integrate changes from one branch into another.    
--   Command (on the target branch):
-    
-    ```
-    git merge <branch_to_merge>
-    
-    ```
-    
-</div>
+::right::
 
----
-layout: default
----
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/basic-branching-4.svg"
+     style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:350px"/>
 
-# Example Merge (No Conflicts)
+<Arrow x1="710" y1="220" x2="710" y2="330" width="3" color="gray"/>
 
-<div class="center">
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/basic-branching-5.svg"
+     style="margin:0 auto; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:350px"/>
 
-1.  `git checkout main` (switch to the target branch).    
-2.  `git merge feature-x` (merge "feature-x" into "main").
-3.  Git automatically combines changes.
-
-</div>
-    
 ---
 layout: default
 ---
@@ -743,28 +752,34 @@ layout: default
 </div>
     
 ---
-layout: default
+layout: two-cols
 ---
 
 # Deleting Branches (Local)
 
-<div class="center">
+- Delete a merged branch:
+  ```
+  git branch -d <branch_name>
+  ```
+- Force delete (even if not merged):
+  ```
+  git branch -D <branch_name>
+  ```
+- Example of merged branch deletion:
+  ```
+  git checkout master
+  git branch -d hotfix
+  ```
 
--   Delete a merged branch:
-    
-    ```
-    git branch -d <branch_name>
-    
-    ```
-    
--   Force delete (even if not merged):
-    
-    ```
-    git branch -D <branch_name>
-    
-    ```
-    
-</div>
+::right::
+
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/basic-branching-5.svg"
+     style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:350px"/>
+
+<Arrow x1="710" y1="270" x2="710" y2="360" width="3" color="gray"/>
+
+<img src="/images/images_basic-branching-5-deleted-hotfix.svg"
+     style="margin:0 auto; background-color:white; padding:5px; border-width:3px; border-radius:5px; width:350px"/>
 
 ---
 layout: default
@@ -810,30 +825,32 @@ layout: default
 
 # What are Remote Repositories?
 
-<div class="center">
+- Centralized repositories hosted on platforms like GitHub, GitLab, or Bitbucket.    
+- Enable collaboration and backups.
 
--   Centralized repositories hosted on platforms like GitHub, GitLab, or Bitbucket.    
--   Enable collaboration and backups.
-
-</div>
-    
 ---
-layout: default
+layout: two-cols
 ---
 
 # Adding a Remote
 
-<div class="center">
-
 ```
-git remote add origin <remote_url>
+git remote add <remote_name> <remote_url>
 
 ```
 
--   `origin`: Common alias for the main remote.    
--   `<remote_url>`: URL of the remote repository.
-    
-</div>
+- `<remote_name>`: Name for the remote.
+  - The most common name for the main remote is `origin`.
+- `<remote_url>`: URL of the remote repository.
+- Example of adding an extra remote:
+  ```
+  git remote add teamone git://git.team1.ourcompany.com
+  ```
+
+::right::
+
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/remote-branches-4.svg"
+     style="margin:0 auto; margin-top:80px; background-color:white; padding:5px; border-radius:5px; width:430px"/>
 
 ---
 layout: default
@@ -890,13 +907,11 @@ git push -u origin main
 </div>
 
 ---
-layout: default
+layout: two-cols
 ---
 
 
 # Fetching Changes
-
-<div class="center">
 
 ```
 git fetch <remote_name>
@@ -905,9 +920,15 @@ git fetch <remote_name>
 
 -   Downloads commits and branches from the remote.    
 -   Does _not_ merge changes.
+- Example:
+  ```
+  git fetch origin
+  ```
 
-</div>
+::right::
 
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/remote-branches-3.svg"
+     style="margin:0 auto; margin-top:80px; background-color:white; padding:5px; border-radius:5px; width:430px"/>
 
 ---
 layout: default
@@ -932,24 +953,27 @@ git pull <remote_name> <branch_name>
 
 
 ---
-layout: default
+layout: two-cols
 ---
 
 
 # Cloning a Repository
-
-<div class="center">
 
 ```
 git clone <remote_url>
 
 ```
 
--   Creates a local copy of a remote repository.    
--   Example: `git clone https://github.com/user/repo.git`
+- Creates a local copy of a remote repository.    
+- Example:
+  ```
+  git clone https://github.com/user/repo.git
+  ```
 
-</div>
+::right::
 
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/remote-branches-1.svg"
+     style="margin:0 auto; margin-top:80px; background-color:white; padding:5px; border-radius:5px; width:430px"/>
 
 ---
 layout: default
