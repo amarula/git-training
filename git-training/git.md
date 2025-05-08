@@ -30,7 +30,7 @@ layout: default
 
 # What is Version Control?
 
-<div class="center">
+<div class="center" style="width:80%">
 
 * Records changes to a file/set of files over time: Instead of just saving the latest version, a VCS keeps a record of every single modification. This includes additions, deletions, and changes to the content of your files. Each change is like a snapshot in time.
 *  A "time machine" for your code: This is a great analogy. You can go back to any previous version of your code or documents. If you introduce a bug or decide you don't like a change, you can easily revert to a working state.
@@ -44,7 +44,7 @@ layout: default
 
 # Why Use Version Control?
 
-<div class="center">
+<div class="center" style="width:80%">
 
 * **Track Changes:** See who, what, and when for accountability and debugging.
 * **Collaboration:**  Enables teamwork, avoiding overwrites; VCS merges changes.
@@ -60,7 +60,7 @@ layout: default
 
 # Benefits: Track Changes
 
-<div class="center">
+<div class="center" style="width:80%">
 
 * **Detailed history of every modification:** A complete log of changes.
 * **Understand project evolution:** See how the project has grown.
@@ -74,7 +74,7 @@ layout: default
 
 # Benefits: Collaboration
 
-<div class="center">
+<div class="center" style="width:80%">
 
 * Multiple developers on the same project.
 * Manage contributions efficiently.
@@ -88,7 +88,7 @@ layout: default
 
 # Benefits: Experimentation
 
-<div class="center">
+<div class="center" style="width:80%">
 
 * Isolate new features or bug fixes.
 * Test without affecting the main codebase.
@@ -96,14 +96,13 @@ layout: default
 
 </div>
 
-
 ---
 layout: default
 ---
 
 # Benefits: Rollback
 
-<div class="center">
+<div class="center" style="width:80%">
 
 * Quickly revert to a previous state.
 * Undo mistakes or recover from errors.
@@ -117,7 +116,7 @@ layout: default
 
 # Benefits: Branching and Merging
 
-<div class="center">
+<div class="center" style="width:80%">
 
 * Develop features in parallel.
 * Isolate unstable code.
@@ -131,7 +130,7 @@ layout: default
 
 # Introduction to Git
 
-<div class="center">
+<div class="center" style="width:80%">
 
 * Distributed Version Control System (DVCS).
 * Created by Linus Torvalds (2005) for Linux kernel.
@@ -148,7 +147,7 @@ layout: default
 
 # Git vs. Other VCS
 
-<div class="center">
+<div class="center" style="width:80%">
 
 | Feature        | Git (Distributed)                               | SVN (Centralized)                             |
 | :------------- | :---------------------------------------------- | :-------------------------------------------- |
@@ -180,7 +179,7 @@ layout: default
 
 # Installing Git
 
-<div class="center">
+<div class="center" style="width:80%">
 
 * **Windows:** [https://git-scm.com/download/win](https://git-scm.com/download/win)
 * **macOS:** [https://git-scm.com/download/mac](https://git-scm.com/download/mac) (or `brew install git`)
@@ -194,7 +193,7 @@ layout: default
 
 # Checking Installation
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git --version
@@ -213,7 +212,7 @@ layout: default
 
 # Basic Git Configuration
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Set username:
 
@@ -241,7 +240,7 @@ layout: default
 
 # Checking Configuration
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git config --list
@@ -260,7 +259,7 @@ layout: default
 
 # Initializing a Repository
 
-<div class="center">
+<div class="center" style="width:80%">
 
 git init creates a new, empty Git repository in the current directory.
 
@@ -288,6 +287,8 @@ git init creates a new, empty Git repository in the current directory.
 layout: default
 ---
 
+<div class="center" style="width:80%">
+
 # Working Directory, Staging Area, Repository
 
 -   **Working Directory:** Your project's files.
@@ -297,30 +298,26 @@ layout: default
 <img src="https://git-scm.com/book/en/v2/images/areas.png"
      style="width:480px; margin:0 auto; background-color:white; padding:5px; border-radius:10px" />
 
+</div>
+
 ---
 layout: default
 ---
 
 # Adding Files to Staging
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Add a single file:
-
     ```
     git add <filename>
 
     ```
-
     Example: `git add index.html`
-
 -   Add multiple files:
-
     ```
     git add .
-
     ```
-
     (Adds all untracked files in the current directory and subdirectories)
 
 </div>
@@ -331,7 +328,7 @@ layout: default
 
 # Checking Status
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git status
@@ -353,7 +350,7 @@ layout: default
 
 # Committing Changes
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Commit: A snapshot of changes.
 
@@ -374,13 +371,12 @@ layout: default
 
 # Commit Message Guidelines
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Clear and concise.
 -   Describe _why_ the change was made, not _what_ was changed.
 -   Use imperative mood ("Fix bug..." not "Fixed bug...").
 -   Example: `feat: Implement user authentication`
-
 
 </div>
 
@@ -390,7 +386,7 @@ layout: default
 
 # Viewing Commit History
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Basic log:
 
@@ -403,14 +399,13 @@ layout: default
 
 </div>
 
-
 ---
 layout: default
 ---
 
 # Detailed Commit History
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   One-line log:
 
@@ -434,7 +429,7 @@ layout: default
 
 # Ignoring Files
 
-<div class="center">
+<div class="center" style="width:80%" >
 
 -   `.gitignore` file: Specifies intentionally untracked files to ignore.
 
@@ -455,7 +450,7 @@ layout: default
 
 # Creating `.gitignore`
 
-<div class="center">
+<div class="center" style="width:80%">
 
 - Create a file named `.gitignore` in the repository's root directory.
 - Add patterns for files/directories to ignore.
@@ -479,7 +474,7 @@ Version control allows you to track changes, seeing who, what, and when for acco
 layout: default
 ---
 
-<div class="center">
+<div class="center" style="width:80%">
 
 # What are Branches?
 
@@ -498,7 +493,7 @@ layout: default
 
 # Why Use Branches?
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Isolate features and bug fixes.
 -   Prevent unstable code from affecting the main branch.
@@ -512,7 +507,7 @@ layout: default
 
 # Listing Branches
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git branch
@@ -530,6 +525,8 @@ layout: two-cols
 
 # Creating a New Branch
 
+<div class="center" style="width:40%">
+
 ```
 git branch <branch_name>
 
@@ -544,7 +541,11 @@ git branch <branch_name>
 
 -   Creates a new branch named "testing".
 
+</div>
+
 ::right::
+
+<div class="center" style="width:40%">
 
 <img src="/images/images_head-to-master-without-testing.svg"
      style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
@@ -554,11 +555,15 @@ git branch <branch_name>
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/head-to-master.svg"
      style="margin:0 auto; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
 
+</div>
+
 ---
 layout: two-cols
 ---
 
 # Switching Branches
+
+<div class="center" style="width:40%">
 
 ```
 git checkout <branch_name>
@@ -574,7 +579,11 @@ git checkout <branch_name>
 
 -   Switches the working directory to the "testing" branch.
 
+</div>
+
 ::right::
+
+<div class="center" style="width:40%">
 
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/head-to-master.svg"
      style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
@@ -584,11 +593,15 @@ git checkout <branch_name>
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/head-to-testing.svg"
      style="margin:0 auto; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
 
+</div>
+
 ---
 layout: two-cols
 ---
 
 # Creating and Switching
+
+<div class="center" style="width:40%">
 
 ```
 git checkout -b <branch_name>
@@ -604,7 +617,11 @@ git checkout -b <branch_name>
 
     ```
 
+</div>
+
 ::right::
+
+<div class="center" style="width:40%">
 
 <img src="/images/images_head-to-master-without-testing.svg"
      style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
@@ -614,13 +631,15 @@ git checkout -b <branch_name>
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/head-to-testing.svg"
      style="margin:0 auto; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
 
+</div>
+
 ---
 layout: default
 ---
 
 # Making Changes on a Branch
 
-<div class="center">
+<div class="center" style="width:80%">
 
 1.  Switch to the branch (`git checkout feature-x`).
 2.  Make changes to files.
@@ -635,7 +654,7 @@ layout: default
 
 # Switching Back to Main
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git checkout main
@@ -652,7 +671,7 @@ layout: default
 
 # Viewing Branch Changes
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Use `git log` while on different branches to see their respective commit histories.
 -   `git log main...feature-x` to see commits unique to feature-x
@@ -665,6 +684,8 @@ layout: two-cols
 
 # Merging Branches
 
+<div class="center" style="width:40%">
+
 - Integrate changes from one branch into another.
 - Command (on the target branch):
   ```
@@ -676,7 +697,11 @@ layout: two-cols
   git merge hotfix
   ```
 
+</div>
+
 ::right::
+
+<div class="center" style="width:40%">
 
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/basic-branching-4.svg"
      style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:350px"/>
@@ -686,13 +711,15 @@ layout: two-cols
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/basic-branching-5.svg"
      style="margin:0 auto; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:350px"/>
 
+</div>
+
 ---
 layout: default
 ---
 
 # Merge Conflicts
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Occur when changes in different branches conflict.
 -   Git cannot automatically resolve them.
@@ -706,7 +733,7 @@ layout: default
 
 # Identifying Conflicts
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   `git status` shows "both modified" files.
 -   Conflicted files contain markers:
@@ -722,7 +749,7 @@ layout: default
 
 # Resolving Conflicts (1)
 
-<div class="center">
+<div class="center" style="width:80%">
 
 1.  Open the conflicted file in an editor.
 2.  Manually choose which changes to keep.
@@ -737,7 +764,7 @@ layout: default
 
 # Resolving Conflicts (2)
 
-<div class="center">
+<div class="center" style="width:80%">
 
 1.  Stage the resolved file:
 
@@ -761,6 +788,8 @@ layout: two-cols
 
 # Deleting Branches (Local)
 
+<div class="center" style="width:40%">
+
 - Delete a merged branch:
   ```
   git branch -d <branch_name>
@@ -775,7 +804,11 @@ layout: two-cols
   git branch -d hotfix
   ```
 
+</div>
+
 ::right::
+
+<div class="center" style="width:40%">
 
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/basic-branching-5.svg"
      style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:350px"/>
@@ -785,13 +818,15 @@ layout: two-cols
 <img src="/images/images_basic-branching-5-deleted-hotfix.svg"
      style="margin:0 auto; background-color:white; padding:5px; border-width:3px; border-radius:5px; width:350px"/>
 
+</div>
+
 ---
 layout: default
 ---
 
 # Branching Strategies
 
-<div class="center">
+<div class="center" style="width:80%">
 
 | GitHub Flow                                  | Git Flow                                      |
 |----------------------------------------------|-----------------------------------------------|
@@ -808,7 +843,7 @@ layout: default
 
 # Keeping Main Updated
 
-<div class="center">
+<div class="center" style="width:80%">
 
 - **Keep main synchronized:** Use git fetch origin main to download remote changes.
 - **Merge or Pull:** Integrate changes with git merge origin main (creates a merge commit) or the combined git pull origin main.
@@ -836,7 +871,7 @@ layout: default
 
 # What are Remote Repositories?
 
-<div class="center">
+<div class="center" style="width:80%">
 
 - Are versions of your project hosted on a server (e.g., GitHub, GitLab).
 - Enable collaboration by allowing multiple developers to share code.
@@ -845,11 +880,14 @@ layout: default
 - Are referenced by a name (usually origin) and a URL.
 
 </div>
+
 ---
 layout: two-cols
 ---
 
 # Adding a Remote
+
+<div class="center" style="width:40%">
 
 ```
 git remote add <remote_name> <remote_url>
@@ -864,10 +902,16 @@ git remote add <remote_name> <remote_url>
   git remote add teamone git://git.team1.ourcompany.com
   ```
 
+</div>
+
 ::right::
+
+<div class="center" style="width:40%">
 
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/remote-branches-4.svg"
      style="margin:0 auto; margin-top:80px; background-color:white; padding:5px; border-radius:5px; width:430px"/>
+
+</div>
 
 ---
 layout: default
@@ -875,7 +919,7 @@ layout: default
 
 # Viewing Remotes
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git remote -v
@@ -896,15 +940,13 @@ panicking@panicking:~/work/bsh/symana/linux$
 
 </div>
 
-
 ---
 layout: default
 ---
 
-
 # Pushing to a Remote
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git push <remote_name> <branch_name>
@@ -930,8 +972,10 @@ git push -u origin main
 layout: two-cols
 ---
 
-
 # Fetching Changes
+
+<div class="center" style="width:40%">
+
 
 ```
 git fetch <remote_name>
@@ -947,20 +991,24 @@ git fetch <remote_name>
   git remote update (keep all the remote update without apply)
   ```
 
+</div>
+
 ::right::
+
+<div class="center" style="width:40%">
 
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/remote-branches-3.svg"
      style="margin:0 auto; margin-top:80px; background-color:white; padding:5px; border-radius:5px; width:430px"/>
+
+</div>
 
 ---
 layout: default
 ---
 
-
 # Pulling Changes
 
-<div class="center">
-
+<div class="center" style="width:80%">
 
 ```
 git pull <remote_name> <branch_name>
@@ -973,13 +1021,13 @@ git pull <remote_name> <branch_name>
 
 </div>
 
-
 ---
 layout: two-cols
 ---
 
-
 # Cloning a Repository
+
+<div class="center" style="width:40%">
 
 ```
 git clone <remote_url>
@@ -992,19 +1040,24 @@ git clone <remote_url>
   git clone https://github.com/user/repo.git
   ```
 
+</div>
+
 ::right::
+
+<div class="center" style="width:40%">
 
 <img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/remote-branches-1.svg"
      style="margin:0 auto; margin-top:80px; background-color:white; padding:5px; border-radius:5px; width:430px"/>
+
+</div>
 
 ---
 layout: default
 ---
 
-
 # Basic Collaboration Workflow
 
-<div class="center">
+<div class="center" style="width:80%">
 
 1. `git clone` the repository.
 2. `git checkout -b <branch>` for your changes.
@@ -1014,15 +1067,13 @@ layout: default
 
 </div>
 
-
 ---
 layout: default
 ---
 
-
 # Pull Requests
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Mechanism for proposing changes.
 -   Facilitates code review and discussion.
@@ -1034,10 +1085,9 @@ layout: default
 layout: default
 ---
 
-
 # Keeping Local Synced
 
-<div class="center">
+<div class="center" style="width:90%">
 
 - Use `git pull` regularly to get the latest changes from the remote.
 
@@ -1069,7 +1119,7 @@ layout: default
 
 # Dealing with Pull Conflicts
 
-<div class="center">
+<div class="center" style="width:80%">
 
 - Similar to merge conflicts.
 - Resolve manually, `git add`, `git commit`.
@@ -1091,6 +1141,8 @@ Automatic merge failed; fix conflicts and then commit the result.
 layout: two-cols
 ---
 
+<div class="center" style="width:45%">
+
 # Rebasing (Introduction)
 
 -   Alternative to merging.
@@ -1098,7 +1150,11 @@ layout: two-cols
 -   Command: `git rebase <branch_to_rebase_onto>`
 -   Caution: Avoid rebasing public history!
 
+</div>
+
 ::right::
+
+<div class="center" style="width:45%">
 
 <img src="https://git-scm.com/book/en/v2/images/basic-rebase-1.png"
      style="margin:0 auto; margin-top:50px; background-color:white; padding:5px; border-width:3px; border-radius:10px; width:300px"/>
@@ -1108,10 +1164,11 @@ layout: two-cols
 <img src="https://git-scm.com/book/en/v2/images/basic-rebase-3.png"
      style="margin:0 auto; background-color:white; padding-top: 100px; border-width:3px; border-radius:10px; width:300px"/>
 
+</div>
+
 ---
 layout: default
 ---
-
 
 # Comparing Branches
 
@@ -1131,10 +1188,9 @@ cf18243 (origin/fix/weston-allow-background-input-media) weston: Update weston t
 layout: default
 ---
 
-
 # Deleting Remote Branches
 
-<div class="center">
+<div class="center" style="width:80%">
 
 Few ways:
 
@@ -1159,15 +1215,13 @@ To https://bitbucket.org/bticinogit/coin
 
 </div>
 
-
 ---
 layout: default
 ---
 
-
 # Troubleshooting Remote Issues
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Authentication errors (SSH keys, passwords).
 
@@ -1188,7 +1242,6 @@ Everything up-to-date
 
 </div>
 
-
 ---
 layout: default
 ---
@@ -1206,10 +1259,9 @@ VCS allows multiple developers to work on the same project simultaneously. It ma
 layout: default
 ---
 
-
 # Undoing Changes
 
-<div class="center">
+<div class="center" style="width:80%">
 
 - **Stages of Undoing:** You can undo changes at different points in your Git workflow: before you've prepared them for a commit, after you've marked them to be included in a commit, or even after you've recorded a commit.
 - **Concept:** Git allows you to revert modifications, providing flexibility to correct mistakes or change your mind.
@@ -1218,15 +1270,13 @@ layout: default
 
 </div>
 
-
 ---
 layout: default
 ---
 
-
 # Unstaged Changes
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Discard changes in the working directory:
 
@@ -1256,7 +1306,7 @@ layout: default
 
 # Unstaging Changes
 
-<div class="center">
+<div class="center" style="width:80%">
 
 - **Command:** git reset \<file\>
     - Use \<file\> to unstage specific files.
@@ -1278,7 +1328,7 @@ layout: default
 
 # Undoing the Last Commit (Local)
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Keep changes in staging:
 
@@ -1305,6 +1355,8 @@ layout: default
 ---
 layout: default
 ---
+
+<div class="center" style="width:80%">
 
 # Understanding HEAD
 
@@ -1333,14 +1385,15 @@ Date:   Tue May 6 19:41:18 2025 +0200
     Signed-off-by: Michael Trimarchi <michael@amarulasolutions.com>
 ```
 
+</div>
+
 ---
 layout: default
 ---
 
-
 # Going Back to a Commit
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git reset --hard <commit_hash>
@@ -1358,10 +1411,9 @@ git reset --hard <commit_hash>
 layout: default
 ---
 
-
 # Undoing a Pushed Commit
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git revert <commit_hash>
@@ -1373,15 +1425,13 @@ git revert <commit_hash>
 
 </div>
 
-
 ---
 layout: default
 ---
 
-
 # Cleaning Untracked Files
 
-<div class="center">
+<div class="center" style="width:80%">
 
 - Dry run:
 
@@ -1412,10 +1462,9 @@ layout: default
 layout: default
 ---
 
-
 # Recovering Deleted Commits
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git reflog
@@ -1431,10 +1480,9 @@ git reflog
 layout: default
 ---
 
-
 # Best Practices for Undoing
 
-<div class="center">
+<div class="center" style="width:80%">
 
 **git reset** can be used to restore the git to a different point.
 
@@ -1463,10 +1511,9 @@ New features or bug fixes can be developed in separate branches, enabling safe e
 layout: default
 ---
 
-
 # Stashing Changes
 
-<div class="center">
+<div class="center" style="width:80%">
 
 - **Temporarily save uncommitted changes:** Stashing takes a snapshot of your modified and staged files, allowing you to switch branches or perform other Git operations without committing incomplete work. It cleans your working directory.
 
@@ -1484,10 +1531,9 @@ layout: default
 layout: default
 ---
 
-
 # Tagging Releases
 
-<div class="center">
+<div class="center" style="width:80%">
 
 Mark specific points in history (e.g., v1.0.0): Tags create persistent snapshots, like version markers, making it easy to reference important releases or milestones in your project's history.
 
@@ -1503,10 +1549,9 @@ Commands:
 layout: default
 ---
 
-
 # Ignoring Changes in Tracked Files
 
-<div class="center">
+<div class="center" style="width:80%">
 
 ```
 git update-index --assume-unchanged <filename>
@@ -1517,15 +1562,13 @@ git update-index --assume-unchanged <filename>
 
 </div>
 
-
 ---
 layout: default
 ---
 
-
 # Git Aliases
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Create shortcuts for commands.
 -   Example:
@@ -1541,10 +1584,9 @@ layout: default
 layout: default
 ---
 
-
 # Further Learning
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Git Documentation: [https://git-scm.com/doc](https://git-scm.com/doc "null")
 -   Online tutorials and courses (e.g., Coursera, Udemy, freeCodeCamp).
@@ -1560,7 +1602,7 @@ layout: default
 
 # Summary
 
-<div class="center">
+<div class="center" style="width:80%">
 
 -   Git is essential for version control.
 -   Key commands: `init`, `add`, `commit`, `branch`, `checkout`, `merge`, `clone`, `push`, `pull`, `status`, `log`, `restore`, `reset`, `revert`.
