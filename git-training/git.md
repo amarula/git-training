@@ -284,6 +284,36 @@ git init creates a new, empty Git repository in the current directory.
 </div>
 
 ---
+layout: two-cols
+---
+
+# Cloning a Repository
+
+<div class="center" style="width:40%">
+
+```
+git clone <remote_url>
+
+```
+
+- Creates a local copy of a remote repository.
+- Example:
+  ```
+  git clone https://github.com/user/repo.git
+  ```
+
+</div>
+
+::right::
+
+<div class="center" style="width:40%">
+
+<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/remote-branches-1.svg"
+     style="margin:0 auto; margin-top:80px; background-color:white; padding:5px; border-radius:5px; width:430px"/>
+
+</div>
+
+---
 layout: default
 ---
 
@@ -527,8 +557,17 @@ git branch
 
 ```
 
--   Shows local branches.
--   The current branch is marked with an asterisk (*).
+- Shows local branches.
+- The current branch is marked with an asterisk (*).
+- example
+    ```bash
+    # git branch
+    devel
+    devel2
+    * master
+    nand
+    nand-next
+    ```
 
 </div>
 
@@ -619,6 +658,9 @@ layout: two-cols
 ```
 git checkout -b <branch_name>
 
+or
+
+git checkout <sha1/branch/tag> -b <branch_name>
 ```
 
 -   Shorthand for creating and switching.
@@ -627,6 +669,10 @@ git checkout -b <branch_name>
 
     ```
     git checkout -b testing
+
+    or
+
+    git checkout e311ceb8085 -b testing
 
     ```
 
@@ -686,8 +732,8 @@ layout: default
 
 <div class="center" style="width:80%">
 
--   Use `git log` while on different branches to see their respective commit histories.
--   `git log main...feature-x` to see commits unique to feature-x
+- Use `git log` while on different branches to see their respective commit histories.
+- Use `git log main...feature-x` to see commits unique to feature-x
 
 </div>
 
@@ -705,6 +751,7 @@ layout: two-cols
   git merge <branch_to_merge>
   ```
 - Example merge (no conflicts):
+  Suppose that hotfix is a branch name where we need to cherry-pick some commits and apply on top of master
   ```
   git checkout master
   git merge hotfix
@@ -752,7 +799,7 @@ layout: default
 -   Conflicted files contain markers:
     -   `<<<<<<< HEAD`
     -   `=======`
-    -   `>>>>>>> feature-x`
+    -   `>>>>>>> hotfix`
 
 </div>
 
@@ -941,14 +988,14 @@ git remote -v
 -   Shows remote names and URLs (fetch and push).
 
 ```bash
-panicking@panicking:~/work/bsh/symana/linux$ git remote -v
+panicking@panicking:~/work/acme/mentana/linux$ git remote -v
 mainline	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git (fetch)
 mainline	https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git (push)
-origin	https://scr.bsh-sdd.com/scm/symana/naos_kernel.git (fetch)
-origin	https://scr.bsh-sdd.com/scm/symana/naos_kernel.git (push)
+origin	https://scr.acme-sdd.com/scm/mentana/nanni_kernel.git (fetch)
+origin	https://scr.acme-sdd.com/scm/mentana/nanni_kernel.git (push)
 texas	git://git.ti.com/ti-linux-kernel/ti-linux-kernel.git (fetch)
 texas	git://git.ti.com/ti-linux-kernel/ti-linux-kernel.git (push)
-panicking@panicking:~/work/bsh/symana/linux$
+panicking@panicking:~/work/acme/mentana/linux$
 ```
 
 </div>
@@ -1035,36 +1082,6 @@ git pull <remote_name> <branch_name>
 </div>
 
 ---
-layout: two-cols
----
-
-# Cloning a Repository
-
-<div class="center" style="width:40%">
-
-```
-git clone <remote_url>
-
-```
-
-- Creates a local copy of a remote repository.
-- Example:
-  ```
-  git clone https://github.com/user/repo.git
-  ```
-
-</div>
-
-::right::
-
-<div class="center" style="width:40%">
-
-<img src="https://raw.githubusercontent.com/progit/progit2/55081eaf0bfb4b0f9bab287c0dd035bf604e43bc/images/remote-branches-1.svg"
-     style="margin:0 auto; margin-top:80px; background-color:white; padding:5px; border-radius:5px; width:430px"/>
-
-</div>
-
----
 layout: default
 ---
 
@@ -1106,21 +1123,21 @@ layout: default
 
 ```bash
 git pull origin kirkstone
-From https://bitbucket.org/bticinogit/coin
+From https://bitbucket.org/acmegit/willy
  * branch            kirkstone  -> FETCH_HEAD
 Updating c438e1a..fbf5244
 Fast-forward
- kas/coin-base.yml                                                                     |   6 +-
+ kas/willy-base.yml                                                                     |   6 +-
  ...d-weston-dpms-client.patch => 0001-weston-Implement-dpms-support-interfaces.patch} | 346 ++++++++++++++++++++++++++++++++++++------
  .../wayland/weston/0002-clients-Add-weston-dpms-client-kiosk-shell.patch              |  89 -----------
  .../wayland/weston/0002-desktop-shell-Whitelist-only-one-application-name-fo.patch    |  62 ++++++++
- meta-coin/recipes-graphics/wayland/weston/0003-dpms-add-output-selection.patch        | 261 -------------------------------
+ meta-willy/recipes-graphics/wayland/weston/0003-dpms-add-output-selection.patch        | 261 -------------------------------
  .../wayland/weston/0004-dpms-Confirm-disable-mode-in-dpms-only-if-all-the-ou.patch    |  80 ----------
- meta-coin/recipes-graphics/wayland/weston/0005-dpms-off-fix.patch                     |  20 ---
- meta-coin/recipes-graphics/wayland/weston/0006-dpms-remove-annoying-print.patch       |  12 --
+ meta-willy/recipes-graphics/wayland/weston/0005-dpms-off-fix.patch                     |  20 ---
+ meta-willy/recipes-graphics/wayland/weston/0006-dpms-remove-annoying-print.patch       |  12 --
  .../wayland/weston/0007-kiosk-shell-Force-remapping-of-wayland-gui-app-id.patch       | 100 ------------
- meta-coin/recipes-graphics/wayland/weston/0007-kiosk-shell-force-keyboard-input.patch |  65 --------
- meta-coin/recipes-graphics/wayland/weston_%.bbappend                                  |   9 +-
+ meta-willy/recipes-graphics/wayland/weston/0007-kiosk-shell-force-keyboard-input.patch |  65 --------
+ meta-willy/recipes-graphics/wayland/weston_%.bbappend                                  |   9 +-
  11 files changed, 365 insertions(+), 685 deletions(-)
 ```
 
@@ -1220,8 +1237,8 @@ git push <remote_name> :<branch_name>
 Example:
 
 ```
-~/work/bticino/test-easykit/coin$ git push origin --delete fix/update-srcrev
-To https://bitbucket.org/bticinogit/coin
+~/work/acme/test-acmekit/willy$ git push origin --delete fix/update-srcrev
+To https://bitbucket.org/acmegit/willy
  - [deleted]         fix/update-srcrev
 
 ```
