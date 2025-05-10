@@ -407,17 +407,28 @@ layout: default
 
 <div class="center" style="width:80%">
 
--   One-line log:
+- One-line log:
 
     ```
     git log --oneline
 
     ```
 
--   Graphical log:
+- Graphical log:
 
     ```
     git log --graph --oneline --decorate --all
+
+    ```
+- Example:
+    ```bash
+    89a6a22 Merge pull request #369 from standup-raven/remove-sponsor-campaign
+    a137a27 Remove Sponsor Campaign
+    e07a544 (tag: v3.3.2) Bump plugin version to v3.3.2 (#368)
+    c4c0097 [MI-3354] Fix issue: repeat dropdown not opening in config modal (#367)
+    5fd9432 Bump plugin version to 3.3.1 (#357)
+    8c8c96f `[#95]` Solved Javascript error while filling standup after reconfiguring (#344)
+    ...
 
     ```
 
@@ -454,6 +465,8 @@ layout: default
 
 - Create a file named `.gitignore` in the repository's root directory.
 - Add patterns for files/directories to ignore.
+- You can find online services that help you to generate .gitignore file as:
+  https://www.toptal.com/developers/gitignore
 - Commit the `.gitignore` file itself.
 
 </div>
